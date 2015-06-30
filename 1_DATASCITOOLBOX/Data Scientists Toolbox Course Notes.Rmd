@@ -2,13 +2,13 @@
 title: "Data Scientist’s Toolbox Course Notes"
 author: "Xing Su"
 output:
-  pdf_document:
-    toc: yes
-    toc_depth: 3
   html_document:
     highlight: pygments
     theme: spacelab
     toc: yes
+  pdf_document:
+    toc: yes
+    toc_depth: 3
 ---
 
 $\pagebreak$
@@ -54,7 +54,7 @@ $\pagebreak$
 * `git checkout -b branchname` = create new branch
 * `git branch` = tells you what branch you are on
 * `git checkout master` = move back to the master branch
-* `git pull` = merge you changes into other branch/repo (pull request, sent to owner of the repo)
+* `git pull` = merge your changes into other branch/repo (pull request, sent to owner of the repo)
 * `git push` = commit local changes to remote (GitHub)
 
 
@@ -71,14 +71,16 @@ $\pagebreak$
 
 * Primary location for R packages $\rightarrow$ CRAN
 * `available.packages()` = all packages available
-* `head(rownames(a),3)` = returns first three names of a
+* `head(rownames(a),3)` = returns first three items in first argument
 * `install.packages("nameOfPackage")` = install single package
 * `install.packages(c("nameOfPackage", "nameOfPackage", "nameOfPackage")` = install multiple package
 * Bioconductor Packages:
     *  `source("https://bioconductor.org/biocLite.R")`
     *  `biocLite()` = install bioconductor packages
 * `library(packagename)` = load package
-* `search()` = see all functions in package after loading
+    * ***Note**: `packagename` is **not** quoted *
+* `search()` = see all loaded packages
+* `ls("package:packagename")` = see functions in loaded package
 
 
 
@@ -88,7 +90,7 @@ $\pagebreak$
 * **Descriptive analysis** = describe set of data, interpret what you see (census, Google Ngram)
 * **Exploratory analysis** = discovering connections (correlation does not = causation)
 * **Inferential analysis** = use data conclusions from smaller population for the broader group
-* **Predictive analysis** = use data on one object to predict values for another (if X predicts Y, does not = X cause Y)
+* **Predictive analysis** = use data on one object to predict values for another (Credit scores, SAT test results)
 * **Causal analysis** = how does changing one variable affect another, using randomized studies, Strong assumptions, golden standard for statistical analysis
 * **Mechanistic analysis** = understand exact changes in variables in other variables, modeled by empirical equations (engineering/physics
 
@@ -102,7 +104,7 @@ $\pagebreak$
 * **Big data** = now possible to collect data cheap, but not necessarily all useful (need the right data)
 
 ## Experimental Design
-* Formulate you question in advance
+* Formulate your question in advance
 * **Statistical inference** = select subset, run experiment, calculate descriptive statistics, use inferential statistics to determine if results can be applied broadly
 * ***[Inference]*** **Variability** = lower variability + clearer differences = decision
 * ***[Inference]*** **Confounding** = underlying variable might be causing the correlation (sometimes called Spurious correlation)
@@ -118,5 +120,5 @@ $\pagebreak$
     * **Accuracy** = Pr(correct outcome)
 * **Data dredging** = use data to fit hypothesis
 * **Good experiments** = have replication, measure variability, generalize problem, transparent
-* Prediction is not inference, and be ware of data dredging
+* Prediction is not inference, and beware of data dredging
 
